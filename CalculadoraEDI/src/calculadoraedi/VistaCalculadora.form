@@ -206,6 +206,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value=")"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="cambiaSigno">
           <Properties>
@@ -214,6 +217,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="(-)"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="borra">
           <Properties>
@@ -222,6 +228,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&#x2190;"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="num4">
           <Properties>
@@ -233,6 +242,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="4"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="num1">
           <Properties>
@@ -244,6 +256,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="1"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="igual">
           <Properties>
@@ -252,6 +267,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="="/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="num7">
           <Properties>
@@ -263,6 +281,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="7"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="num0">
           <Properties>
@@ -274,6 +295,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="num2">
           <Properties>
@@ -285,12 +309,18 @@
             </Property>
             <Property name="text" type="java.lang.String" value="2"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="exp">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -308,6 +338,9 @@
               </Border>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="limpia">
           <Properties>
@@ -330,6 +363,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="3"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="div">
           <Properties>
@@ -338,6 +374,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="/"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="multi">
           <Properties>
@@ -346,6 +385,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="*"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="num9">
           <Properties>
@@ -357,6 +399,12 @@
             </Property>
             <Property name="text" type="java.lang.String" value="9"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num9ActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="num5">
           <Properties>
@@ -368,6 +416,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="5"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="num6">
           <Properties>
@@ -379,6 +430,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="6"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="num8">
           <Properties>
@@ -390,6 +444,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="8"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="punto">
           <Properties>
@@ -398,6 +455,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="."/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="suma">
           <Properties>
@@ -406,6 +466,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="+"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="menos">
           <Properties>
@@ -414,6 +477,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

@@ -11,11 +11,17 @@ package calculadoraedi;
  */
 public class VistaCalculadora extends javax.swing.JFrame {
 
+    
+    protected javax.swing.JButton numeros[];
     /**
      * Creates new form VistaCalculadora
      */
     public VistaCalculadora() {
         initComponents();
+        numeros = new javax.swing.JButton[]{
+            num0, num1, num2, num3, num4, num5, num6, num7, num8, num9
+        };
+        
     }
 
     /**
@@ -115,6 +121,11 @@ public class VistaCalculadora extends javax.swing.JFrame {
         num9.setBackground(new java.awt.Color(51, 51, 51));
         num9.setForeground(new java.awt.Color(255, 255, 255));
         num9.setText("9");
+        num9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num9ActionPerformed(evt);
+            }
+        });
 
         num5.setBackground(new java.awt.Color(51, 51, 51));
         num5.setForeground(new java.awt.Color(255, 255, 255));
@@ -263,6 +274,10 @@ public class VistaCalculadora extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void num9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_num9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -299,30 +314,30 @@ public class VistaCalculadora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton borra;
-    private javax.swing.JButton cambiaSigno;
-    private javax.swing.JButton div;
-    private javax.swing.JLabel exp;
-    private javax.swing.JButton igual;
+    protected javax.swing.JButton borra;
+    protected javax.swing.JButton cambiaSigno;
+    protected javax.swing.JButton div;
+    protected javax.swing.JLabel exp;
+    protected javax.swing.JButton igual;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     protected javax.swing.JButton limpia;
-    private javax.swing.JButton menos;
-    private javax.swing.JButton multi;
-    private javax.swing.JButton num0;
-    private javax.swing.JButton num1;
-    private javax.swing.JButton num2;
-    private javax.swing.JButton num3;
-    private javax.swing.JButton num4;
-    private javax.swing.JButton num5;
-    private javax.swing.JButton num6;
-    private javax.swing.JButton num7;
-    private javax.swing.JButton num8;
-    private javax.swing.JButton num9;
+    protected javax.swing.JButton menos;
+    protected javax.swing.JButton multi;
+    protected javax.swing.JButton num0;
+    protected javax.swing.JButton num1;
+    protected javax.swing.JButton num2;
+    protected javax.swing.JButton num3;
+    protected javax.swing.JButton num4;
+    protected javax.swing.JButton num5;
+    protected javax.swing.JButton num6;
+    protected javax.swing.JButton num7;
+    protected javax.swing.JButton num8;
+    protected javax.swing.JButton num9;
     protected javax.swing.JButton pAbierto;
-    private javax.swing.JButton pCerrado;
-    private javax.swing.JButton punto;
-    private javax.swing.JLabel resultado;
-    private javax.swing.JButton suma;
+    protected javax.swing.JButton pCerrado;
+    protected javax.swing.JButton punto;
+    protected javax.swing.JLabel resultado;
+    protected javax.swing.JButton suma;
     // End of variables declaration//GEN-END:variables
 }
