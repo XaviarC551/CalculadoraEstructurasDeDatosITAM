@@ -301,35 +301,41 @@ public class VistaCalculadora extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VistaCalculadora().setVisible(true);
+//                for(int i=arrBtn.length-1; i>=0; i--){ 
+//                     arrBtn[i] = new JButton(""+(i+1));
+//                      jPanel1.add(arrBtn[i]);
+//                      arrBtn[i].addActionListener(this);
+//                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton borra;
-    private javax.swing.JButton cambiaSigno;
-    private javax.swing.JButton div;
+    protected javax.swing.JButton borra;
+    protected javax.swing.JButton cambiaSigno;
+    protected javax.swing.JButton div;
     private javax.swing.JLabel expresion;
-    private javax.swing.JButton igual;
+    protected javax.swing.JButton igual;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton limpiar;
-    private javax.swing.JButton multi;
-    private javax.swing.JButton num0;
-    private javax.swing.JButton num1;
-    private javax.swing.JButton num2;
-    private javax.swing.JButton num3;
-    private javax.swing.JButton num4;
-    private javax.swing.JButton num5;
-    private javax.swing.JButton num6;
-    private javax.swing.JButton num7;
-    private javax.swing.JButton num8;
-    private javax.swing.JButton num9;
-    private javax.swing.JButton pDer;
-    private javax.swing.JButton pIzq;
-    private javax.swing.JButton punto;
-    private javax.swing.JButton resta;
-    private javax.swing.JLabel resultado;
-    private javax.swing.JButton suma;
+    protected javax.swing.JButton limpiar;
+    protected javax.swing.JButton multi;
+    protected javax.swing.JButton num0;
+    protected javax.swing.JButton num1;
+    protected javax.swing.JButton num2;
+    protected javax.swing.JButton num3;
+    protected javax.swing.JButton num4;
+    protected javax.swing.JButton num5;
+    protected javax.swing.JButton num6;
+    protected javax.swing.JButton num7;
+    protected javax.swing.JButton num8;
+    protected javax.swing.JButton num9;
+    protected javax.swing.JButton pDer;
+    protected javax.swing.JButton pIzq;
+    protected javax.swing.JButton punto;
+    protected javax.swing.JButton resta;
+    protected javax.swing.JLabel resultado;
+    protected javax.swing.JButton suma;
+    protected javax.swing.JButton []arrBtn = new JButton[10];
     // End of variables declaration//GEN-END:variables
 }
