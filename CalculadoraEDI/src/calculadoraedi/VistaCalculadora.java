@@ -48,7 +48,7 @@ public class VistaCalculadora extends javax.swing.JFrame {
         num0 = new javax.swing.JButton();
         num2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        expresion = new javax.swing.JLabel();
+        exp = new javax.swing.JLabel();
         resultado = new javax.swing.JLabel();
         limpiar = new javax.swing.JButton();
         num3 = new javax.swing.JButton();
@@ -102,10 +102,10 @@ public class VistaCalculadora extends javax.swing.JFrame {
         num2.setForeground(new java.awt.Color(255, 255, 255));
         num2.setText("2");
 
-        expresion.setBackground(new java.awt.Color(255, 255, 255));
-        expresion.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        expresion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jScrollPane1.setViewportView(expresion);
+        exp.setBackground(new java.awt.Color(255, 255, 255));
+        exp.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        exp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jScrollPane1.setViewportView(exp);
 
         resultado.setBackground(new java.awt.Color(0, 0, 0));
         resultado.setFont(new java.awt.Font("Lucida Fax", 0, 24)); // NOI18N
@@ -328,7 +328,7 @@ public class VistaCalculadora extends javax.swing.JFrame {
     private javax.swing.JButton borra;
     private javax.swing.JButton cambiaSigno;
     private javax.swing.JButton div;
-    private javax.swing.JLabel expresion;
+    protected javax.swing.JLabel exp;
     private javax.swing.JButton igual;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -348,7 +348,7 @@ public class VistaCalculadora extends javax.swing.JFrame {
     private javax.swing.JButton pCerrado;
     private javax.swing.JButton punto;
     private javax.swing.JButton resta;
-    private javax.swing.JLabel resultado;
+    protected javax.swing.JLabel resultado;
     private javax.swing.JButton suma;
     protected javax.swing.JButton ultimaResp;
     // End of variables declaration//GEN-END:variables
