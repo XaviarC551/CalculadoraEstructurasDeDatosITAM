@@ -52,6 +52,7 @@ public class VistaCalculadora extends javax.swing.JFrame {
         punto = new javax.swing.JButton();
         suma = new javax.swing.JButton();
         resta = new javax.swing.JButton();
+        ultimaResp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,14 +96,12 @@ public class VistaCalculadora extends javax.swing.JFrame {
         expresion.setBackground(new java.awt.Color(255, 255, 255));
         expresion.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         expresion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        expresion.setText("(1+2)*15=");
         jScrollPane1.setViewportView(expresion);
 
         resultado.setBackground(new java.awt.Color(0, 0, 0));
         resultado.setFont(new java.awt.Font("Lucida Fax", 0, 24)); // NOI18N
         resultado.setForeground(new java.awt.Color(255, 255, 255));
         resultado.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        resultado.setText("45");
         resultado.setToolTipText("");
         resultado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -144,6 +143,8 @@ public class VistaCalculadora extends javax.swing.JFrame {
         resta.setBackground(new java.awt.Color(255, 204, 51));
         resta.setText("-");
 
+        ultimaResp.setText("Ultima respuesta");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -152,7 +153,14 @@ public class VistaCalculadora extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(num0, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ultimaResp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(num4, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
@@ -200,12 +208,7 @@ public class VistaCalculadora extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(142, 142, 142))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(num0, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(142, 142, 142))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,7 +249,9 @@ public class VistaCalculadora extends javax.swing.JFrame {
                         .addComponent(num9, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(punto, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(num0, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(num0, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                    .addComponent(ultimaResp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
 
@@ -311,31 +316,31 @@ public class VistaCalculadora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    protected javax.swing.JButton borra;
-    protected javax.swing.JButton cambiaSigno;
-    protected javax.swing.JButton div;
+    private javax.swing.JButton borra;
+    private javax.swing.JButton cambiaSigno;
+    private javax.swing.JButton div;
     private javax.swing.JLabel expresion;
-    protected javax.swing.JButton igual;
+    private javax.swing.JButton igual;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    protected javax.swing.JButton limpiar;
-    protected javax.swing.JButton multi;
-    protected javax.swing.JButton num0;
-    protected javax.swing.JButton num1;
-    protected javax.swing.JButton num2;
-    protected javax.swing.JButton num3;
-    protected javax.swing.JButton num4;
-    protected javax.swing.JButton num5;
-    protected javax.swing.JButton num6;
-    protected javax.swing.JButton num7;
-    protected javax.swing.JButton num8;
-    protected javax.swing.JButton num9;
-    protected javax.swing.JButton pDer;
-    protected javax.swing.JButton pIzq;
-    protected javax.swing.JButton punto;
-    protected javax.swing.JButton resta;
-    protected javax.swing.JLabel resultado;
-    protected javax.swing.JButton suma;
-    protected javax.swing.JButton []arrBtn = new JButton[10];
+    private javax.swing.JButton limpiar;
+    private javax.swing.JButton multi;
+    private javax.swing.JButton num0;
+    private javax.swing.JButton num1;
+    private javax.swing.JButton num2;
+    private javax.swing.JButton num3;
+    private javax.swing.JButton num4;
+    private javax.swing.JButton num5;
+    private javax.swing.JButton num6;
+    private javax.swing.JButton num7;
+    private javax.swing.JButton num8;
+    private javax.swing.JButton num9;
+    private javax.swing.JButton pDer;
+    private javax.swing.JButton pIzq;
+    private javax.swing.JButton punto;
+    private javax.swing.JButton resta;
+    private javax.swing.JLabel resultado;
+    private javax.swing.JButton suma;
+    protected javax.swing.JButton ultimaResp;
     // End of variables declaration//GEN-END:variables
 }
