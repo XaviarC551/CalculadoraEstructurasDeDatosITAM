@@ -96,13 +96,13 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="pIzq" min="-2" pref="85" max="-2" attributes="0"/>
+                                      <Component id="pAbierto" min="-2" pref="85" max="-2" attributes="0"/>
                                       <Component id="num1" alignment="1" min="-2" pref="85" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="num2" min="-2" pref="84" max="-2" attributes="0"/>
-                                      <Component id="pDer" min="-2" pref="85" max="-2" attributes="0"/>
+                                      <Component id="pCerrado" min="-2" pref="85" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
@@ -144,10 +144,10 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="limpiar" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
-                      <Component id="pIzq" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="pAbierto" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
                       <Component id="cambiaSigno" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
                       <Component id="borra" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
-                      <Component id="pDer" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="pCerrado" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -190,7 +190,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="pIzq">
+        <Component class="javax.swing.JButton" name="pAbierto">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -198,7 +198,7 @@
             <Property name="text" type="java.lang.String" value="("/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="pDer">
+        <Component class="javax.swing.JButton" name="pCerrado">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>

@@ -11,11 +11,20 @@ package calculadoraedi;
  */
 public class VistaCalculadora extends javax.swing.JFrame {
 
+    
+    protected javax.swing.JButton botones[];
+    protected final int totalBotones = 22;
     /**
      * Creates new form VistaCalculadora
      */
     public VistaCalculadora() {
         initComponents();
+        botones = new javax.swing.JButton[]{
+            num0, num1, num2, num3, num4, num5, num6, num7, num8, num9, 
+            div, multi, suma, resta, igual, punto, pAbierto, pCerrado, 
+            cambiaSigno, limpiar, borra, ultimaResp 
+        };
+        
     }
 
     /**
@@ -28,8 +37,8 @@ public class VistaCalculadora extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        pIzq = new javax.swing.JButton();
-        pDer = new javax.swing.JButton();
+        pAbierto = new javax.swing.JButton();
+        pCerrado = new javax.swing.JButton();
         cambiaSigno = new javax.swing.JButton();
         borra = new javax.swing.JButton();
         num4 = new javax.swing.JButton();
@@ -58,11 +67,11 @@ public class VistaCalculadora extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        pIzq.setBackground(new java.awt.Color(204, 204, 204));
-        pIzq.setText("(");
+        pAbierto.setBackground(new java.awt.Color(204, 204, 204));
+        pAbierto.setText("(");
 
-        pDer.setBackground(new java.awt.Color(204, 204, 204));
-        pDer.setText(")");
+        pCerrado.setBackground(new java.awt.Color(204, 204, 204));
+        pCerrado.setText(")");
 
         cambiaSigno.setBackground(new java.awt.Color(204, 204, 204));
         cambiaSigno.setText("(-)");
@@ -185,12 +194,12 @@ public class VistaCalculadora extends javax.swing.JFrame {
                                     .addComponent(igual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pIzq, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(pAbierto, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(num1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(pDer, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(pCerrado, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(5, 5, 5)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -220,10 +229,10 @@ public class VistaCalculadora extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pIzq, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pAbierto, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cambiaSigno, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(borra, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pDer, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pCerrado, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -335,8 +344,8 @@ public class VistaCalculadora extends javax.swing.JFrame {
     private javax.swing.JButton num7;
     private javax.swing.JButton num8;
     private javax.swing.JButton num9;
-    private javax.swing.JButton pDer;
-    private javax.swing.JButton pIzq;
+    private javax.swing.JButton pAbierto;
+    private javax.swing.JButton pCerrado;
     private javax.swing.JButton punto;
     private javax.swing.JButton resta;
     private javax.swing.JLabel resultado;
