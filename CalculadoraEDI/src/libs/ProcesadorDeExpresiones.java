@@ -16,11 +16,13 @@ public class ProcesadorDeExpresiones {
     }
     
     private int getJerarquia(char a){
-        int res = 0;
+        int res = 1;
         if(a == '^')
-            res = 2;
+            res = 3;
         else if(a == '*' || a == '/')
-            res = 1;
+            res = 2;
+        else if(a == ')' || a == '(')
+            res = 0;            
         return res;
     }
     
