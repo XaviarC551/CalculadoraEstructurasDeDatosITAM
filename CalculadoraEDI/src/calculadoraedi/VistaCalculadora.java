@@ -13,6 +13,7 @@ public class VistaCalculadora extends javax.swing.JFrame {
 
     
     protected javax.swing.JButton botones[];
+    protected final int totalBotones = 22;
     /**
      * Creates new form VistaCalculadora
      */
@@ -20,7 +21,8 @@ public class VistaCalculadora extends javax.swing.JFrame {
         initComponents();
         botones = new javax.swing.JButton[]{
             num0, num1, num2, num3, num4, num5, num6, num7, num8, num9, 
-            div, multi, suma, resta, 
+            div, multi, suma, resta, igual, punto, pAbierto, pCerrado, 
+            cambiaSigno, limpia, borra, ultimaResp 
         };
         
     }
