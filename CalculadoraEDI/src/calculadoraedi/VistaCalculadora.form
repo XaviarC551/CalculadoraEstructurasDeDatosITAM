@@ -58,14 +58,16 @@
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="num0" min="-2" pref="267" max="-2" attributes="0"/>
-                              <Component id="resultado" alignment="0" min="-2" pref="446" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="resultado" min="-2" pref="446" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="num0" min="-2" pref="267" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="ultimaResp" max="32767" attributes="0"/>
+                              </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="num4" pref="85" max="32767" attributes="0"/>
@@ -91,7 +93,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="menos" max="32767" attributes="0"/>
+                                      <Component id="resta" max="32767" attributes="0"/>
                                       <Component id="igual" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -163,7 +165,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="suma" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
-                      <Component id="menos" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
+                      <Component id="resta" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="num4" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                           <Component id="num5" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
@@ -181,7 +183,10 @@
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="num0" min="-2" pref="59" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="num0" pref="59" max="32767" attributes="0"/>
+                      <Component id="ultimaResp" max="32767" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -470,7 +475,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="menos">
+        <Component class="javax.swing.JButton" name="resta">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="cc" red="ff" type="rgb"/>
@@ -480,6 +485,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="ultimaResp">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ultima respuesta"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

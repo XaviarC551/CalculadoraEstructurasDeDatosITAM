@@ -11,8 +11,9 @@ package libs;
  */
 public class ProcesadorDeExpresiones {
     private String expresion;
-    public ProcesadorDeExpresiones() {
     
+    public ProcesadorDeExpresiones() {
+        
     }
     
     private int getJerarquia(char a){
