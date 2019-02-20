@@ -77,7 +77,7 @@ public class ProcesadorDeExpresiones {
             }else if(isNumber(a)){
                 j = i;
                 num = "";
-                while(j < n && isNumber(cad.charAt(j))){
+                while(j < n && (isNumber(cad.charAt(j)) || cad.charAt(j) == '.')){
                     num+=cad.charAt(j);
                     j++;                    
                 }
@@ -105,7 +105,7 @@ public class ProcesadorDeExpresiones {
                 resp.push(op.pop());
         }
         return resp;
-    } 
+    }  
     private boolean isNumber(Character a){
         if((int)a >= 48 && (int)a <= 57)
             return true;
