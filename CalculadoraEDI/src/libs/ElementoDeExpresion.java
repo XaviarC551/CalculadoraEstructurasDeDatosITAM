@@ -6,7 +6,7 @@
 package libs;
 
 /**
- * @Author Equipo 4 
+ * @author Equipo 4 
  * 
  */
 public interface ElementoDeExpresion {

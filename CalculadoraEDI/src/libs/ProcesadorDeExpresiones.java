@@ -7,14 +7,26 @@ package libs;
 
 /**
  *
- * @author priet
+ * @author Equipo 4
  */
 public class ProcesadorDeExpresiones {
     
+    /**
+     * Valida si un caracter es un numero o un punto decimal
+     * @param c caracter a validar
+     * @return <ul>
+     *      <li> true si si es un numero o un punto decimal </li>
+     *      <li> false si no lo es </li>
+     */
     private static boolean isNum(char c){
         return (c >= '0' && c <= '9') || (c == '.');
     }
     
+    /**
+     * Regresa el correspondiente contrario a una llave, parentesis o llave
+     * @param c el caracter a verificar
+     * @return regresa el contrario al caracter dado
+     */
     private static char getRep(char c){
         char res='(';
         if(c == ']')
@@ -24,10 +36,25 @@ public class ProcesadorDeExpresiones {
         return res;
     }
     
+    /**
+     * Compara las jerarquias  de dos operadores
+     * @param a primer operador a comparar
+     * @param b segundo operador a comparar 
+     * @return <ul>
+     *         <li> un positivo si la jerarquia de a es mayor </li>
+     *         <li> 0 si la jerarquia de ambos es igual </li>
+     *         <li> un negativo si la jerarquia de b es mayor </li>
+     * </ul>
+     */
     private static int compararOperador(char a, char b){
         return getJerarquia(a)-getJerarquia(b);
     }
     
+    /**
+     * Obtiene la jerarquia de un operador dado
+     * @param a el operador del que se quiere obtener la jerarquia
+     * @return el valor de la jerarquia del operador
+     */
     private static int getJerarquia(char a){
         int res = -1;
         if(a == '^')
@@ -84,6 +111,12 @@ public class ProcesadorDeExpresiones {
         }
         return valores.peek();
     }*/
+    
+    /**
+     * Funcion para procesar una expresion postfija
+     * @param invertida la expresion a procesar
+     * @return la expresion ya procesada
+     */
     private static double procesarPostfija(Pila<ElementoDeExpresion> invertida){
         
         Pila<ElementoDeExpresion> postfija=invertida;
@@ -133,6 +166,14 @@ public class ProcesadorDeExpresiones {
         return valores.peek();
     }
     
+    /**
+     * Funcion que revisa si una expresion es valida
+     * @param str la expresion a revisar 
+     * @return <ul>
+     *         <li> true si la expresion es validada </li>
+     *         <li> false si la expresion no es valida </li>
+     *    </ul>
+     */
     private static boolean revisarExpresion(String str){
         boolean res=true;
         PilaA pila=new PilaA<Character>();
@@ -268,6 +309,11 @@ public class ProcesadorDeExpresiones {
         return resp;
     }*/
     
+    /**
+     * Funcion que convierte una expresion a su notacion postfija
+     * @param cad la expresion a convertir
+     * @return una pila que tenga la expresion en notacion postfija
+     */
     private static  PilaA<ElementoDeExpresion> convertirPostfija(String cad){
         PilaA<ElementoDeExpresion> op, resp;        
         int n, j, i;       
@@ -337,6 +383,13 @@ public class ProcesadorDeExpresiones {
         return op;
     }   
     
+    /**
+     * Obtiene un numero de una cadena
+     * @param a la cadena de la que se quiere obtener
+     * @param j la posicion desde la cual se va a obtener el numero
+     * @param n la primera posicion de la que ya no se quiere obtener el numero
+     * @return el numero obtenido
+     */
     public static String obtenerNum(String a, int j, int n){
         String resp;
         resp = "";
@@ -348,7 +401,11 @@ public class ProcesadorDeExpresiones {
                 
     }
     
-    
+    /**
+     * Funcion que procesa la expresion
+     * @param expresion la expresion a procesar
+     * @return el numero resultado
+     */
     public static double procesarExpresion(String expresion){
         if(!revisarExpresion(expresion))
             throw new ErrorDeSintaxisException();

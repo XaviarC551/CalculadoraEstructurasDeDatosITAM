@@ -14,7 +14,7 @@ public class Numero implements ElementoDeExpresion{
 
     /**
      * Se crea un objeto Numero cuyo valor es el numero que representa
-     * @param valor 
+     * @param valor el valor que va a representar
      */
     public Numero(double valor) {
         this.valor = valor;

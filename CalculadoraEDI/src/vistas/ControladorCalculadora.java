@@ -27,8 +27,8 @@ public class ControladorCalculadora extends VistaCalculadora {
     };
     
     /**
-     * <ul>
      * Al inicializar el objeto:
+     * <ul>
      * <li> se inicializa la vista </li>
      * <li> a los botones de la vista se les da la 
      *      funcionalidad de EscuchaBoton, la cual se encuentra en el código 
@@ -187,7 +187,7 @@ public class ControladorCalculadora extends VistaCalculadora {
     };
     
     /**
-     * Clase para que pueda utilizar la calculadora con el uso delz
+     * Clase para que pueda utilizar la calculadora con el uso
      */
     class EscuchaTeclado implements KeyListener{
         @Override
