@@ -7,21 +7,30 @@ package libs;
 
 /**
  *
- * @author priet
+ * @author Equipo4
  */
 public class Operador implements ElementoDeExpresion{
     
     private char operador;
-    
+     /**
+     * Es un constructor del Operado que utiliza un
+     * @param operador 
+     */
     public Operador(char operador) {
         this.operador=operador;
     }
-
+    /**
+     * Sirve para obtener el valor decimal
+     * @return 0.0
+     */
     @Override
     public double getDoubleValue() {
         return 0.0;
     }
-
+    /**
+     * Sirve para obtener el valor del caracter
+     * @return operador
+     */
     @Override
     public char getCharValue() {
         return operador;
