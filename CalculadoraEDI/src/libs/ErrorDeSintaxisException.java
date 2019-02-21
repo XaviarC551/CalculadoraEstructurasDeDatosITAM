@@ -7,16 +7,23 @@ package libs;
 
 /**
  *
- * @author priet
+ * @author Equipo4
  */
 public class ErrorDeSintaxisException extends RuntimeException{
 
+    /**
+     * Lanza una excepción cuyo texto es "Error de sintaxis"
+     */
     public ErrorDeSintaxisException() {
         super("Error de sintaxis!");
     }
     
-    public ErrorDeSintaxisException(String str) {
-        super(str);
+    /**
+     * Lanza una excepción cuyo texto es un String dado como parametro
+     * @param mensaje el mensaje que se quiere mostrar al usuario
+     */
+    public ErrorDeSintaxisException(String mensaje) {
+        super(mensaje);
     }
     
 }

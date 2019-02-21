@@ -7,15 +7,23 @@ package libs;
 
 /**
  *
- * @author priet
+ * @author Equipo 4
  */
 class EmptyCollectionException extends RuntimeException {
 
+    /**
+     * Lanza una excepción cuyo texto es "Coleccion vacia"
+     */
     public EmptyCollectionException() {
         super("Coleccion vacia");
     }
-    public EmptyCollectionException(String str) {
-        super(str);
+    
+    /**
+     * Lanza una excepción cuyo texto es un String dado como parametro
+     * @param mensaje el mensaje que se quiere mostrar al usuario
+     */
+    public EmptyCollectionException(String mensaje) {
+        super(mensaje);
     }
     
 }
