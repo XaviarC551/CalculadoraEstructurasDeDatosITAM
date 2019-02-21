@@ -141,13 +141,19 @@ public class ControladorCalculadora extends VistaCalculadora {
                             while(i>=0 && esNumero(exp.charAt(i)))
                                 i--;
                             System.out.println(i);
-                            expresion.setText(substr(exp,0, i+1)+"(-"+exp.substring(i+1, k)+")");
+                            expresion.setText(substr(exp,0, i+1)+
+                                    "(-"+exp.substring(i+1, k)+")");
                         }
                     }
                     break;
                 case '=':
                     try{
-                        resultado.setText(String.valueOf(ProcesadorDeExpresiones.procesarExpresion(exp)));
+                        // Asegurarse que el usuario no de una entrada vacía a
+                        // la calculadora
+                        if(exp.length()>0)
+                            resultado.setText(String.valueOf(
+                                    ProcesadorDeExpresiones.procesarExpresion(
+                                            exp)));
                     }
                     catch(Exception e){
                         if(e instanceof ErrorDeSintaxisException)

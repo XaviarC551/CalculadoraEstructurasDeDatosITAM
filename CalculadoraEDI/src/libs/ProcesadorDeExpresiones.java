@@ -121,9 +121,6 @@ public class ProcesadorDeExpresiones {
         
         Pila<ElementoDeExpresion> postfija=invertida;
         
-        /*
-        while(!invertida.isEmpty())
-            postfija.push(invertida.pop());*/
         Pila<Double> valores=new PilaA();
         
         
@@ -135,7 +132,6 @@ public class ProcesadorDeExpresiones {
                 double m=0.0;
                 double b=valores.pop();
                 double a;
-                
                 if(valores.isEmpty())
                     a=0.0;
                 else
@@ -148,6 +144,7 @@ public class ProcesadorDeExpresiones {
                         m = a - b;
                         break;
                     case '/':
+                        // Invalidar la división entre 0
                         if(b==0)
                             throw new ErrorDeIndefinicionException();
                         m = a / b;
@@ -174,45 +171,47 @@ public class ProcesadorDeExpresiones {
      *         <li> false si la expresion no es valida </li>
      *    </ul>
      */
-    private static boolean revisarExpresion(String str){
+    public static boolean revisarExpresion(String str){
+
         boolean res=true;
-        PilaA pila=new PilaA<Character>();
+        
+        // Pila para
+        PilaA pilaParentesis=new PilaA<Character>();
+        
+        // Índice de caracter actual
         int i=0;
+        // Variable de caracter actual
         char c='\0';
+        // Variable de caracter previo
         char prev='\0';
+        
         
         boolean dec=false;
         StringBuilder cad=new StringBuilder();
         
         while(i<str.length()&&res){
             c=str.charAt(i);
-            if(c=='('||c=='{'||c=='[')
-                pila.push(c);
-            else if(c==')'||c=='}'||c==']'){
-                
+            
+            // Validaciones de paréntesis
+            if(c=='(')
+                pilaParentesis.push(c);
+            else if(c==')'){
+                // Revisar que un paréntesis no esté vacío
                 if(getJerarquia(prev) > 0 || prev=='(')
                     res=false;
-                
-                if(pila.isEmpty())
+                // Revisar que no hayan cierres de paréntesis adicionales
+                if(pilaParentesis.isEmpty())
                     res=false;
-                else{
-                    if(!pila.peek().equals(getRep(c)))
-                        res=false;
-                    pila.pop();
-                }
+                else
+                    pilaParentesis.pop();
             }
             
-            // Validar puntos decimales
+            // Guardar el número previo en un StringBuilder
             if(isNum(c)){
-                cad.append(c);
-                /*if(c == '.'){
-                    if(dec)
-                        res=false;
-                    else
-                        dec=!dec;
-                }*/
+                cad.append(c);                
             }
             else{
+                // Revisar que el número previo sea válido
                 if(cad.length()!=0){
                     try{
                         Double.parseDouble(cad.toString());
@@ -222,17 +221,26 @@ public class ProcesadorDeExpresiones {
                     }
                     cad.delete(0, cad.length());
                 }
-                //dec=false;
+                
+                // Validaciones de símbolos
                 if(prev!='\0' && !isNum(prev)){
-                    if(c != '-' && c != '+'){
+                    // Si el operador actual no es un + o un -
+                    if(getJerarquia(c) != 1){
+                        // Revisar que no  hayan operadores antes de un operador
+                        // de segundo o tercer nivel jerarquico (e.g: **)
                         if((getJerarquia(c) > 0 && getJerarquia(prev) > 0))
                             res=false;
                     }
                     else if(c=='+'){
-                        if((getJerarquia(prev) > 0) || prev=='(')
+                        // Revisar que no hayan operadores adyacentes al de suma
+                        // (e.g: *+) ni haya un paréntesis antes del signo
+                        // (e.g: (+1))
+                        if(getJerarquia(prev) > 0 || prev=='(')
                             res=false;
                     }
-                    else if(getJerarquia(c) > 0 && getJerarquia(prev) > 0 && prev == c){
+                    // Revisar que no hayan repeticiones de operadores de resta
+                    // (e.g: --)
+                    else if(prev == c){
                         res=false;
                     }
                 }
@@ -242,72 +250,21 @@ public class ProcesadorDeExpresiones {
             i++;
             prev=c;
         }
-        return res && pila.isEmpty() && getJerarquia(str.charAt(str.length()-1))<=0;
-    }
-    
-    
-    
-    /*private static  PilaA<ElementoDeExpresion> convertirPostfija(String cad){
-        PilaA<ElementoDeExpresion> op, resp;
-        int n, j;       
-        char a;        
-        String num;
-        n = cad.length();                       
-        resp = new PilaA<ElementoDeExpresion>();
-        op = new PilaA<ElementoDeExpresion>();     
-        
-        boolean negative=false;
-        for(int i = 0; i < n; i++){
-            a = cad.charAt(i);            
-            if(a == '('  || (op.isEmpty() && !isNum(a))){
-                //(!isNum(cad.charAt(i-1)) && cad.charAt(i-1)!=')')
-                    op.push(new Operador(a));
-            }else if(isNum(a)){
-                j = i;
-                num = "";
-                while(j < n && (isNum(cad.charAt(j)) || cad.charAt(j) == '.')){
-                    num+=cad.charAt(j);
-                    j++;                 
-                }
-                
-                /*if(i-2>=0){
-                    if(cad.charAt(i-1)=='-' && !isNum(cad.charAt(i-2)))
-                        resp.push(new Numero(-Double.parseDouble(num)));
-                    else
-                        resp.push(new Numero(Double.parseDouble(num)));
-                }
-                else{
-                    if(i-1>=0 && cad.charAt(i-1) == '-')
-                        resp.push(new Numero(-Double.parseDouble(num)));
-                    else*/
-        /*            resp.push(new Numero(Double.parseDouble(num)));
-                i = j-1;
-                negative=false;
-            }else if(a == ')'){
-                while(op.peek().getCharValue() != '('){
-                    resp.push(op.pop());
-                }
-                op.pop();
-            }else{
-                
-                    if( getJerarquia(a) > getJerarquia(op.peek().getCharValue()))
-                        op.push(new Operador(a));
-                    else{
-                        while(!op.isEmpty() && getJerarquia(a) <= getJerarquia(op.peek().getCharValue())){
-                            resp.push(op.pop());
-                        }
-                        op.push(new Operador(a));
-                    }
-                
-                    
+        System.out.println(i);
+        // Revisar el último número si no fue procesado en el ciclo
+        if(cad.length()!=0){
+            try{
+                Double.parseDouble(cad.toString());
             }
-        }        
-        if(!op.isEmpty()){
-            while(!op.isEmpty())
-                resp.push(op.pop());
+            catch(Exception e){
+                res=false;
+            }
         }
-        return resp;
-    }*/
+        // Revisar que la pila de paréntesis esté vacía y no haya un operador
+        // como último caracter.
+        return res && pilaParentesis.isEmpty() &&
+                getJerarquia(str.charAt(str.length()-1))<=0;
+    }
     
     /**
      * Funcion que convierte una expresion a su notacion postfija
@@ -381,7 +338,7 @@ public class ProcesadorDeExpresiones {
             while(!resp.isEmpty())
                 op.push(resp.pop());        
         return op;
-    }   
+    }
     
     /**
      * Obtiene un numero de una cadena
@@ -411,48 +368,6 @@ public class ProcesadorDeExpresiones {
             throw new ErrorDeSintaxisException();
         return procesarPostfija(convertirPostfija(expresion));
         //return 0.0;
-    }
-    
-    public static void main(String[] args){
-        ProcesadorDeExpresiones proc=new ProcesadorDeExpresiones();
-        Pila<ElementoDeExpresion> p=proc.convertirPostfija("5/0.55/-0.5");
-        //Pila<ElementoDeExpresion> p=new PilaA<ElementoDeExpresion>();
-        // 4 5 2 4 ^ 3 - 2 1 1 * + ^ * + 3 -
-        /*p.push(new Numero(4));
-        p.push(new Numero(5));
-        p.push(new Numero(2));
-        p.push(new Numero(4));
-        p.push(new Operador('^'));
-        p.push(new Numero(3));
-        p.push(new Operador('-'));
-        p.push(new Numero(2));
-        p.push(new Numero(1));
-        p.push(new Numero(1));
-        p.push(new Operador('*'));
-        p.push(new Operador('+'));
-        p.push(new Operador('^'));
-        p.push(new Operador('*'));
-        p.push(new Operador('+'));
-        p.push(new Numero(3));
-        
-        
-        p.push(new Operador('-'));
-        */
-        /*
-        p.push(new Numero(6));
-        p.push(new Numero(2));
-        p.push(new Operador('-'));
-        p.push(new Numero(5));
-        p.push(new Numero(4));
-        p.push(new Operador('+'));
-        p.push(new Operador('*'));*//*
-        */
-        while(!p.isEmpty())
-            System.out.println(p.pop());
-        
-        //System.out.println(proc.procesarPostfija("4 5 2 4 ^ 3 - 2 1 1 * + ^ * + 3 -"));
-        //System.out.println(proc.revisarExpresion("-(90+2.0*-((-2))*3)"));*/
-        //Double.parseDouble("(.");
     }
     
 }
