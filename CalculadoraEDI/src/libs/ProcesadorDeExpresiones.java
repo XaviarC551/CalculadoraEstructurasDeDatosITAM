@@ -65,6 +65,13 @@ public class ProcesadorDeExpresiones {
         }
         return valores.peek();
     }
+    /**
+     * 
+     * @param cad Cadena que va a convertir en expresion postfija
+     * @see esNumero
+     * @see obtenerNum
+     * @return PilaA<ElementoDeExpresion> Contiene los elementos de la expresion postfija
+     */
     private  PilaA<ElementoDeExpresion> convertirPostfija(String cad){
         PilaA<ElementoDeExpresion> op, resp;        
         int n, j, i;       
@@ -116,18 +123,29 @@ public class ProcesadorDeExpresiones {
         if(!op.isEmpty()){
             while(!op.isEmpty())
                 resp.push(op.pop());
-        }
-        
-            while(!resp.isEmpty())
-                op.push(resp.pop());        
-        return op;
+        }             
+        return resp;
     }   
+    /**
+     * 
+     * @param a Representa un caracter
+     * @return <ul>
+     * <li> true: Si el carcater es un numero
+     * <li> false: Si el caracter no es un numero
+     * </ul>
+     * 
+     */
     public boolean esNumero(Character a){
-        if((int)a >= 48 && (int)a <= 57)
-            return true;
-        return false;
+        return a >= 48 && a <= 57;
     }
-    
+    /**
+     * 
+     * @param a Expresion que se esta convirtiendo en postfija
+     * @param j posicion donde inicia el numero
+     * @return <ul>
+     * <li> String: Representa el numero
+     * </ul>
+     */
     public String obtenerNum(String a, int j, int n){
         String resp;
         resp = "";
