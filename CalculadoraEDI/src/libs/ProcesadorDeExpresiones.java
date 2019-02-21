@@ -1,4 +1,70 @@
-private  PilaA<ElementoDeExpresion> convertirPostfija(String cad){
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package libs;
+
+/**
+ *
+ * @author priet
+ */
+public class ProcesadorDeExpresiones {
+    private String expresion;
+    public ProcesadorDeExpresiones() {
+    
+    }
+    
+    public int getJerarquia(char a){
+        int res = 1;
+        if(a == '^')
+            res = 3;
+        else if(a == '*' || a == '/')
+            res = 2;
+        else if(a == ')' || a == '(')
+            res = 0;            
+        return res;
+    }
+    
+    private int compararOperador(char a, char b){
+        return getJerarquia(a)-getJerarquia(b);
+    }
+    
+    private double procesarPostfija(Pila<ElementoDeExpresion> postfija){
+        Pila<Double> valores=new PilaA();
+        
+        while(!postfija.isEmpty()){
+            ElementoDeExpresion e = postfija.pop();
+            if(e instanceof Numero)
+                valores.push(e.getDoubleValue());
+            else{
+                double m=0.0;
+                double b=valores.pop();
+                double a=valores.pop();
+                switch(e.getCharValue()){
+                    case '+':
+                        m = a + b;
+                        break;
+                    case '-':
+                        m = a - b;
+                        break;
+                    case '/':
+                        m = a / b;
+                        break;
+                    case '*':
+                        m = a * b;
+                        break;
+                    case '^':
+                        m = Math.pow(a, b);
+                        break;
+                        
+                }
+                valores.push(m);
+            }
+        }
+        return valores.peek();
+    }
+    private  PilaA<ElementoDeExpresion> convertirPostfija(String cad){
         PilaA<ElementoDeExpresion> op, resp;        
         int n, j, i;       
         char a;        
@@ -23,7 +89,7 @@ private  PilaA<ElementoDeExpresion> convertirPostfija(String cad){
                 i = i + num.length()-1;
             }else if(a == ')'){
                 while(op.peek().getCharValue() != '('){
-                    resp.push(new Operador(op.pop().getCharValue()));  /// Error aqui 
+                    resp.push(new Operador(op.pop().getCharValue()));
                 }
                 op.pop();
             }else{
@@ -70,3 +136,4 @@ private  PilaA<ElementoDeExpresion> convertirPostfija(String cad){
         return resp;
                 
     }
+}
