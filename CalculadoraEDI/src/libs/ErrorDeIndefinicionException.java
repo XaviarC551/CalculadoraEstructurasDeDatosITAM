@@ -7,14 +7,21 @@ package libs;
 
 /**
  *
- * @author priet
+ * @author Equipo 4
  */
 public class ErrorDeIndefinicionException extends RuntimeException{
+    /**
+     * Lanza una excepción cuyo texto es "Error de sintaxis"
+     */
     public ErrorDeIndefinicionException() {
-        super("Error de sintaxis!");
+        super("Error de sintaxis");
     }
     
-    public ErrorDeIndefinicionException(String str) {
-        super(str);
+    /**
+     * Lanza una excepción cuyo texto es un String dado como parametro
+     * @param mensaje el mensaje que se quiere mostrar al usuario
+     */
+    public ErrorDeIndefinicionException(String mensaje) {
+        super(mensaje);
     }
 }

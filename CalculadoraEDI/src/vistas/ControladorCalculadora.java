@@ -16,7 +16,7 @@ import libs.ProcesadorDeExpresiones;
 //import libs.ProcesadorDeExpresiones;
 /**
  *
- * @author CD
+ * @author Equipo 4
  */
 public class ControladorCalculadora extends VistaCalculadora {
     //TODO: ProcesadorDeExpresiones
@@ -25,26 +25,58 @@ public class ControladorCalculadora extends VistaCalculadora {
         '/','*','+','-','=','.','(',')','n','l',
         'b'
     };
+    
+    /**
+     * <ul>
+     * Al inicializar el objeto:
+     * <li> se inicializa la vista </li>
+     * <li> a los botones de la vista se les da la 
+     *      funcionalidad de EscuchaBoton, la cual se encuentra en el código 
+     *      de esta misma clase, con el primer simbolo/caracter que representan </li>
+     * <li> se iniciliza la lectura del teclado </li>
+     * <li> se muestra un mensaje </li>
+     * </ul>
+     */
     public ControladorCalculadora(){
         super();        
         for(int i = 0; i<botones.length; i++){
             botones[i].addActionListener(
-                    new EscuchaBoton(mapaDeBotones[i]));
-            
+                    new EscuchaBoton(mapaDeBotones[i]));  
         }
         this.addKeyListener(new EscuchaTeclado());
         mostrarMensaje("Hola","Mundo!");
     }
     
+    /**
+     * Metodo para mostrar un mensaje en la pantalla por medio de un JOptionPane
+     * @param mensaje el mensaje que se quiere mostrar
+     * @param titulo el titulo que tendra el JOptionPane
+     */
     private void mostrarMensaje(String mensaje, String titulo){
         JOptionPane.showMessageDialog(this,mensaje,titulo,
                 JOptionPane.INFORMATION_MESSAGE);
     }
     
+    /**
+     * El metodo determina si un caracter dado es un numero o un punto decimal
+     * @param c // el caracter a probar
+     * @return <ul>
+     *          <li> true si si es un numero o un punto decimal </li>
+     *          <li> false si es un caracter distinto a los especificados </li>
+     */
     private boolean esNumero(char c){
         return (c>='0' && c<='9') || c == '.';
     }
     
+    /**
+     * Metodo auxiliar para verificar que lo que teclee el usuario sean simbolos
+     * que pueda procesar la calculadora
+     * @param c el caracter que se quiere veridicar
+     * @return <ul>
+     *          <li> true si si lo puede procesar </li>
+     *          <li> false si no lo puede procesar </li>
+     * </ul>
+     */
     private boolean puedeEscribirse(char c){
         return esNumero(c) ||
                 (c >= '(' && c<='+') ||
@@ -52,17 +84,36 @@ public class ControladorCalculadora extends VistaCalculadora {
             
     }
     
+    /**
+     * Metodo para limpiar la expresion y el resultado
+     */
     private void clear(){
         expresion.setText("");
         resultado.setText("");
     }
     
+    /**
+     * Metodo para obtener una subcadena dada la cadena y limites inferior y superior
+     * @param str la cadena de la que se quiere obtener la subcadena
+     * @param a   la posicion del primer caracter que se quiere en la cadena
+     * @param b   la posicion del primer caracter, despues de la posicion de a,
+     *            que no se quiere en la subcadena
+     * @see substring
+     * @return    
+     */
     private String substr(String str, int a, int b){
-        if(b<a)
-            return "";
-        return str.substring(a, b);
+        String sub = "";
+        if(b>a)
+            sub = str.substring(a, b);
+        return sub;
     }
     
+    /**
+     * Metodo auxiliar para dar funcionalidad a los botones en funcion del simbolo
+     * que representen
+     * @param c el caracter que recibe del boton
+     * @see puedeEscribirse
+     */
     public void procesarBoton(char c){
         String exp=expresion.getText();
         if(this.puedeEscribirse(c)){

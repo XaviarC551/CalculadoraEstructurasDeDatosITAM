@@ -6,8 +6,8 @@
 package libs;
 
 /**
- *
- * @author priet
+ * @Author Equipo 4 
+ * 
  */
 public interface ElementoDeExpresion {
     public abstract double getDoubleValue();

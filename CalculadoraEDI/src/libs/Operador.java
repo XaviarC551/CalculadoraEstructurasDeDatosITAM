@@ -7,11 +7,12 @@ package libs;
 
 /**
  *
- * @author priet
+ * @author Equipo 4 
  */
 public class Operador implements ElementoDeExpresion{
     
     private char operador;
+    
     
     public Operador(char operador) {
         this.operador=operador;
