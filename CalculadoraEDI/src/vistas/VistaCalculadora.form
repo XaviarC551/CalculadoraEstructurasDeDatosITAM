@@ -46,6 +46,11 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
+        <Property name="alignmentX" type="float" value="1.0"/>
+        <Property name="alignmentY" type="float" value="1.0"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Default Cursor"/>
+        </Property>
       </Properties>
 
       <Layout>
@@ -76,7 +81,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="num3" min="-2" pref="87" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="multi" min="-2" pref="86" max="-2" attributes="0"/>
+                                  <Component id="multi" min="-2" pref="82" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="cambiaSigno" min="-2" pref="85" max="-2" attributes="0"/>
@@ -84,10 +89,15 @@
                                   <Component id="limpiar" min="-2" pref="86" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="div" max="32767" attributes="0"/>
-                              <Component id="borra" pref="78" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                  <Component id="borra" pref="80" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="div" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace min="10" max="32767" attributes="0"/>
                       </Group>

@@ -160,18 +160,35 @@ public class ControladorCalculadora extends VistaCalculadora {
         }
         
     }   
-        
+    
+    /**
+     * Clase para dar funcionalidad a los botones
+     */
     class EscuchaBoton implements ActionListener{
         private char comando;
         
+        /**
+         * Crea un ActionListener para dar funcionalidad al boton
+         * @param comando simbolo que representa al boton segun el mapa de botones
+         */
         public EscuchaBoton(char comando){
             this.comando=comando;
         }
+        
+        /**
+         * Metodo para que cuando opriman el boton, se ejecute la funcion dado el
+         * simbolo que representa
+         * @param  
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             procesarBoton(comando);
         }
     };
+    
+    /**
+     * Clase para que pueda utilizar la calculadora con el uso delz
+     */
     class EscuchaTeclado implements KeyListener{
         @Override
         public void keyTyped(KeyEvent e) {
