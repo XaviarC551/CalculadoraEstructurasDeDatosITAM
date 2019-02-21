@@ -69,16 +69,17 @@ public class ProcesadorDeExpresiones {
         int n, j, i;       
         char a;        
         String num;        
-        n = cad.length();                       
         resp = new PilaA<ElementoDeExpresion>();
         op = new PilaA<ElementoDeExpresion>();                
-        cad = cad.replace("-(", "-1*(");    
+        cad = cad.replace("-(", "-1*("); 
+        n = cad.length();                       
         i=0;
         if(cad.charAt(0) == '-'){ /// Esto es para el caso especial -555....
                 num = obtenerNum(cad,1,n);
                 resp.push(new Numero(-Double.parseDouble(num)));
                 i = num.length() + 1;
         }
+
         while( i < n){
             a = cad.charAt(i);            
             if(a == '('){
@@ -90,11 +91,11 @@ public class ProcesadorDeExpresiones {
             }else if(a == ')'){
                 while(op.peek().getCharValue() != '('){
                     resp.push(new Operador(op.pop().getCharValue()));
-                }
+                }                
                 op.pop();
             }else{
                 if(a == '-' && cad.charAt(i-1) == '('){ // Caso 2*(-2)
-                    num = obtenerNum(cad,i,n);
+                    num = obtenerNum(cad,i+1,n);
                     resp.push(new Numero(-Double.parseDouble(num)));
                     i = i + num.length();                                        
                 }
@@ -116,9 +117,9 @@ public class ProcesadorDeExpresiones {
                 resp.push(op.pop());
         }
         
-            /*while(!resp.isEmpty())
-                op.push(resp.pop());        */
-        return resp;
+            while(!resp.isEmpty())
+                op.push(resp.pop());        
+        return op;
     }   
     public boolean esNumero(Character a){
         if((int)a >= 48 && (int)a <= 57)
