@@ -114,10 +114,11 @@ public class ProcesadorDeExpresiones {
     
     /**
      * Funcion para procesar una expresion postfija
+     * @throws ErrorDeIndefinicionException
      * @param invertida la expresion a procesar
      * @return la expresion ya procesada
      */
-    private static double procesarPostfija(Pila<ElementoDeExpresion> invertida){
+    public static double procesarPostfija(Pila<ElementoDeExpresion> invertida){
         
         Pila<ElementoDeExpresion> postfija=invertida;
         
@@ -271,7 +272,7 @@ public class ProcesadorDeExpresiones {
      * @param cad la expresion a convertir
      * @return una pila que tenga la expresion en notacion postfija
      */
-    private static  PilaA<ElementoDeExpresion> convertirPostfija(String cad){
+    public static  PilaA<ElementoDeExpresion> convertirPostfija(String cad){
         PilaA<ElementoDeExpresion> op, resp;        
         int n, j, i;       
         char a;        
@@ -347,7 +348,7 @@ public class ProcesadorDeExpresiones {
      * @param n la primera posicion de la que ya no se quiere obtener el numero
      * @return el numero obtenido
      */
-    public static String obtenerNum(String a, int j, int n){
+    private static String obtenerNum(String a, int j, int n){
         String resp;
         resp = "";
         while(j < n && (isNum(a.charAt(j)) || a.charAt(j) == '.')){
@@ -360,6 +361,7 @@ public class ProcesadorDeExpresiones {
     
     /**
      * Funcion que procesa la expresion
+     * @throws ErrorDeSintaxisException
      * @param expresion la expresion a procesar
      * @return el numero resultado
      */

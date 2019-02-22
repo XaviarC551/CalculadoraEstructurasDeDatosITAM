@@ -49,7 +49,7 @@ public class ProcesadorDeExpresionesTest {
      */
     @Test
     public void testRevisarExpresion() {
-        System.out.println("procesarExpresion");
+        System.out.println("revisarExpresion");
         String[] expresiones = new String[]{
             "2(-2)",
             "2(2)",

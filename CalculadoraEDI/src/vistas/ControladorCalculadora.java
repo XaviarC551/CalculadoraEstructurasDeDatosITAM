@@ -44,7 +44,6 @@ public class ControladorCalculadora extends VistaCalculadora {
                     new EscuchaBoton(mapaDeBotones[i]));  
         }
         this.addKeyListener(new EscuchaTeclado());
-        mostrarMensaje("Hola","Mundo!");
     }
     
     /**
